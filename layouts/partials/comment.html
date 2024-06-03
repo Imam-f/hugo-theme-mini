@@ -1,6 +1,11 @@
-{{ if or (and .Site.Params.enableComments (ne .Params.enableComments false)) (eq .Params.enableComments true) }}
-  <div id="comment">
-    <!-- https://gohugo.io/templates/internal/#use-the-disqus-template -->
-    {{ template "_internal/disqus.html" . }}
-  </div>
+{{ if or 
+        (and 
+            .Site.Params.enableComments 
+            (ne .Params.enableComments false)
+        )
+        (eq .Params.enableComments true) 
+}}
+<!-- Your HTML snippet goes here -->
+<script defer src="http://localhost:8090/comentario.js"></script>
+<comentario-comments></comentario-comments>
 {{ end }}
